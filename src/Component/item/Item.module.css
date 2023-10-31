@@ -1,0 +1,21 @@
+.other_item {
+    opacity: 50%;
+}
+
+.this_item {
+    /* border : 1px solid green; */
+    padding: 10px;
+}
+
+.this_item:hover {
+    background-color: aquamarine;
+}
+
+.today {
+    background-color: rgba(255, 201, 143, 0.889);
+    border-radius: 50%;
+}
+
+.weekend {
+    color: red;
+}

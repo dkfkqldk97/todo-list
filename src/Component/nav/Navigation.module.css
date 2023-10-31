@@ -1,0 +1,18 @@
+.main_header {
+    position : relative;
+    height : 75px;
+}
+
+.home {
+    position: absolute;
+    top : 10px; left : 10px;
+}
+
+.login_menu {
+    position: absolute;
+    top : 10px; right : 10px;
+}
+
+.login_item {
+    margin : 0 10px 10px 0;
+}
