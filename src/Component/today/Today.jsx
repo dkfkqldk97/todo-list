@@ -22,6 +22,7 @@ const Today = () => {
         } else {
             section.style.setProperty('background', "#fff");
         }
+
         setShowModal(status);
         }
     
@@ -37,7 +38,6 @@ const Today = () => {
                 <button className={styles.button_add} onClick={() => getModal(true)}>ADD</button>
                 {showModal && createPortal(
                 <TodoModal onClose={() => getModal(false)} 
-                // day  = {value} month = {month}
                 />, document.body
             )}
             </div>
