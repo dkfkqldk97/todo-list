@@ -6,7 +6,7 @@ const  Main = () => {
     return (
         <div>
             {/* 네비게이션 바 */}
-            <Navigation></Navigation>
+            {/* <Navigation></Navigation> */}
             <Section></Section>
         </div>
     )

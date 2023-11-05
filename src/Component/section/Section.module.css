@@ -1,8 +1,6 @@
 .section_container{
-    overflow: hidden;
-    border : 1px solid pink;
-}
-
-.section_layout {
-    float: left;
+    background: #FFF;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
 }

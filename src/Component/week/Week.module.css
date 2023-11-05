@@ -1,0 +1,6 @@
+.calander_week {
+    width : 729px;
+    height : 85px;
+    display: flex;
+    justify-content: space-evenly;
+}

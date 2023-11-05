@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import styles from "./Calander.module.css";
 import Week from "../week/Week";
-import TodoModal from "../todo/modal/TodoModal";
 
 const Calander = () => {
     
@@ -14,15 +13,7 @@ const Calander = () => {
         }
     )
 
-    const [showModal, setShowModal] = useState(false);
-    const [selectDay, setSelectDay] = useState();
-    
     const yoil = ["월", "화", "수", "목", "금", "토", "일"]
-
-    const getTodoModal = (status, value) => {
-        setShowModal(status);
-        setSelectDay(value);
-    }
 
     const moveCalander = (type, status) => {
         if(status === "year"){
@@ -41,40 +32,28 @@ const Calander = () => {
 
     
     return (
-        <div>
+        <React.Fragment>
             <div className={styles.calander_container}>
-                <table className={styles.calander_layout}>
-                    <thead className={styles.calander_header}>
-                        <tr>
-                            <th colSpan= "1" className={styles.calander_title} onClick={() => moveCalander(-1, "year")}>{"<"}</th>
-                            <th colSpan= "2" className={styles.calander_title}>{title.year}년</th>
-                            <th colSpan= "1" className={styles.calander_title} onClick={() => moveCalander(+1, "year")}>{">"}</th>
+                    <div className={styles.calander_header}>
+                            <button className={`${styles.calander_title} ${styles.button}`} onClick={() => moveCalander(-1, "month")}>{"<"}</button>
+                            <div className={styles.calander_title}>{title.year}년 {title.month}월</div>
+                            <button className={`${styles.calander_title} ${styles.button}`} onClick={() => moveCalander(+1, "month")}>{">"}</button>
                             
-                            <th colSpan= "1" className={styles.calander_title} onClick={() => moveCalander(-1, "month")}>{"<"}</th>
-                            <th colSpan= "1" className={styles.calander_title}>{title.month}월</th>
-                            <th colSpan= "1" className={styles.calander_title} onClick={() => moveCalander(+1, "month")}>{">"}</th>
-                        </tr>
-                    </thead>
-                    <tbody className={styles.calander_body}>
-                        <tr>
+                            {/* <span className={styles.calander_title} onClick={() => moveCalander(-1, "month")}>{"<"}</span> */}
+                            {/* <span className={styles.calander_title} onClick={() => moveCalander(+1, "month")}>{">"}</span> */}
+                    </div>
+                    <div className={styles.calander_body}>
+                        <div className={styles.calander_week}>
                             {yoil.map((item, index) => (
-                                <td key = {index} className={styles.calander_item}>{item}</td>
+                                <div key = {index} className={styles.calander_item}><p>{item}</p></div>
                                 ))}
-                        </tr>
+                        </div>
                         <Week 
                             title = {title}
-                            getTodoModal = {getTodoModal}
                             ></Week>
-                    </tbody>
-                </table>
-            </div>
-            {showModal && (<TodoModal
-                                year = {title.year}
-                                month = {title.month}
-                                day = {selectDay}
-                            >
-                            </TodoModal>)}
-        </div>
+                    </div>
+                </div>
+        </React.Fragment>
 
     )
 }

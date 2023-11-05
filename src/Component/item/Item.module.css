@@ -1,14 +1,11 @@
 .other_item {
-    opacity: 50%;
-}
-
-.this_item {
-    /* border : 1px solid green; */
-    padding: 10px;
+    opacity: 20%;
 }
 
 .this_item:hover {
-    background-color: aquamarine;
+    background-color: rgba(252, 222, 255, 0.445);
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .today {
@@ -19,3 +16,11 @@
 .weekend {
     color: red;
 }
+
+.calander_item {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+}
+

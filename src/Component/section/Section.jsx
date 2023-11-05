@@ -6,7 +6,7 @@ import styles from "./Section.module.css";
 const Section = () => {
 
     return (
-        <div className={styles.section_container}>
+        <div className={styles.section_container} id="section">
             <Calander></Calander>
             <Today></Today>
         </div>

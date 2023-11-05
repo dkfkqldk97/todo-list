@@ -1,6 +1,50 @@
-.today_container{
-    /* background-color: bisque; */
-    border : 1px solid palevioletred;
-    float: left;
-    width : 30%;
+.today_container {
+    height: 774px;
+    width: 706px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    /* margin : 5% 0 0 3%; */
+}
+
+.today_title{
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.today_header{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button_add {
+    background: none;
+    border: none;
+}
+
+.button_add:hover {
+    cursor: pointer;
+}
+
+.textarea {
+    width: 40%;
+    height: 100%;
+    resize: none;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    position: relative;
+    right: 10px;
+}
+
+.textarea::placeholder {
+    text-indent: 10%;
 }

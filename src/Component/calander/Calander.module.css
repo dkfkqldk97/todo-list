@@ -1,31 +1,56 @@
 .calander_container {
-    /* background-color: rgba(234, 144, 180, 0.694); */
-    border : 1px solid black;
-    margin : 0 10px 0 10px;
-    float : left;
-    width : 500px;
-    height : 500px;
-}
-
-.calander_layout{
-    left : 10px;
-    text-align: center;
-    width : 100%;
-    height : 100%;
-    table-layout: fixed;
+    height: 774px;
+    width : 729px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    /* margin : 5% 0 0 3%; */
 }
 
 .calander_header {
-    margin : 0 0 20px 0;
+    width: 300px;
+    height: 37px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #5F5F5F;
+    text-align: center;
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    /* margin : 10px; */
+    align-items: center;
+    position : relative;
+    top : 2%;
 }
-.calander_title {
-    /* font-size: large; */
-    margin : 0 10px 20px 10px;
+.calander_body {
+    width : 729px;
+    height : 600px;
+    border-top: 1px solid rgba(0, 0, 0, 0.20);
+}
+
+.calander_week {
+    width : 729px;
+    height : 100px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .calander_item {
-    margin: 10px 10px 10px 10px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
 }
 
+.button {
+    border : none;
+    background: none;
+}
 
 

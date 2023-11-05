@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Item from "../item/Item";
-import TodoModal from "../todo/modal/TodoModal";
+import styles from "../week/Week.module.css";
 
 
 const Week = (props) => {
-    const {title, getTodoModal} = props;
+    const {title} = props;
     const [state, setStates] = useState(
         {
             firstDateIndex : 0
@@ -54,11 +54,11 @@ const Week = (props) => {
 
 
     return (
-        <>
+        <React.Fragment>
             {/* dates 배열에서 7개씩 잘라서 한주에 넣기 */}
             {state.dates.map((item, index) => {
                 return index%7 === 0 ? 
-                <tr key = {index}> 
+                <div key = {index} className={styles.calander_week}> 
                         {state.dates.slice(index, index+7).map((value, num) => {
                             return <Item 
                                         key = {num} 
@@ -67,13 +67,13 @@ const Week = (props) => {
                                         firstIndex = {state.firstDateIndex} 
                                         lastIndex = {state.lastDateIndex} 
                                         day = {num}
-                                        getTodoModal = {getTodoModal}>
+                                        month =  {title.month}>
                                     </Item>
                         })}
-                </tr> 
+                </div> 
                     : null
                 })}
-    </>
+    </React.Fragment>
     )
 }
 export default Week;
