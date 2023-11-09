@@ -15,7 +15,7 @@
     width : 50%;
     height : 70%;
     background-color: rgb(255, 255, 255);
-    border : 1px solid black;
+    border : 1px solid rgba(0, 0, 0, 0.2);
     z-index: 10;
     color: black;
 }
@@ -36,7 +36,7 @@
     right : 10px;
 }
 
-.input_layout {
+.text_layout {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,10 +57,46 @@
     border: 1px solid;
 }
 
-.calander_layout {
+.container {
     display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 10px 20px 0px 40px;
+}
+
+.calander_layout {
+    margin: 0 20px 0 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.calander_item {
+    margin: 0 5px 0 5px;
 }
 
 .checkbox_layout {
+    display: flex;
+    align-items: center;
+}
+
+.blurtext {
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 15px;
+    margin: 0 20px 0 20px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.bookmark {
+    background-color: yellow;
+}
+
+.button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
     display: flex;
 }

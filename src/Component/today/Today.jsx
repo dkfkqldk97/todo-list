@@ -23,8 +23,9 @@ const Today = () => {
                 <div className={styles.today_title}>
                     ToDo List
                 </div>
-                <textarea className={styles.textarea}placeholder="search">
-                </textarea>
+                <div className={styles.textarea_layout}>
+                    <textarea className={styles.textarea}placeholder="search"></textarea>     
+                </div>
                 <button className={styles.button_add} onClick={() => getModal(true)}>+ ADD</button>
                 {showModal && createPortal(
                 <TodoModal onClose={() => getModal(false)} 
