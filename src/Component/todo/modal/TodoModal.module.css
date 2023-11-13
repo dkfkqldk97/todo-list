@@ -40,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin : 20px;
 }
 
 .input_text {
@@ -61,7 +62,7 @@
     display: flex;
     align-items: center;
     justify-items: center;
-    padding: 10px 20px 0px 40px;
+    padding: 10px 20px 20px 40px;
 }
 
 .calander_layout {
@@ -100,3 +101,52 @@
     align-items: center;
     display: flex;
 }
+
+.memo_container {
+    flex-direction: row;
+    padding: 10px 20px 20px 40px;
+}
+
+.memo {
+    resize: none;
+    width: 50%;
+    height : 50px;
+}
+
+.tag_modal_container {
+    position : absolute;
+    width: 100%;
+    height: 100%;
+    top : 0px;
+    background: rgba(0, 0, 0, 0.51);
+    border-radius: 12px;
+}
+
+.tag_modal_layout {
+    width: 60%;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    top : 40%;
+    left : 20%;
+}
+
+.tag_input {
+    position: absolute;
+    top : 10%;
+    resize: none;
+    border : none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tag_button {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 10px;
+    margin: 10px 20px;
+    width :55px;
+    height: 25px;
+    justify-content: center;
+}
+

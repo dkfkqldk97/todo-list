@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./TodoModal.module.css";
 import calanderIcon from "./../../../image/calander.svg";
 import starIcon from "./../../../image/star.svg";
 import filterIcon from "./../../../image/filter.svg";
 import addIcon from "./../../../image/add.svg";
+import likeIcon from "./../../../image/like.svg";
+import dislikeIcon from "./../../../image/dislike.svg";
+import fullstarIcon from "./../../../image/fullstar.svg";
 
+let tagid = 0;
 
 const TodoModal = (props) => {
     const {onClose} = props;
@@ -25,6 +29,10 @@ const TodoModal = (props) => {
 
     const [check, setCheck] = useState(false);
     const [bookmark, setBookmark] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const [taglist, setTaglsit] = useState([]);
+    const [tag, setTag] = useState();
 
     const addTask = () => {
     //   task = {...task, startDate : this.calander.startCalander };
@@ -48,6 +56,17 @@ const TodoModal = (props) => {
 
         }
     }
+
+    const addTag = () => {
+        setTaglsit([...taglist, {id:tagid++, tag:tag}]);
+        setShowModal(false);
+    }
+
+    useEffect(() => {
+        taglist.map((value, index) => {
+            return console.log(value.tag);
+        })
+    },[taglist]);
     
     return (
         <div className={styles.modal_bg}>
@@ -58,7 +77,7 @@ const TodoModal = (props) => {
                 {/* 할일 입력 */}
                 <div className={styles.text_layout}>
                     <textarea className={styles.input_text}placeholder="할일을 입력하세요"></textarea>
-                    <img src={starIcon} alt="즐겨찾기아이콘" className={`${bookmark ? styles.bookmark : ''} ${styles.icon}`} onClick={() => {setBookmark(!bookmark)}}></img>
+                    <img src={`${bookmark ? fullstarIcon :starIcon}`} alt="즐겨찾기아이콘" className={styles.icon} onClick={() => {setBookmark(!bookmark)}}></img>
                 {/* 기간 입력 */}
                 </div>
                 <div className={styles.container}>
@@ -92,17 +111,31 @@ const TodoModal = (props) => {
                 {/* 태그 */}
                 <div className={styles.container}>
                     <img src={filterIcon} alt="필터아이콘"></img>
-                    <div className={styles.blurtext}>태그설정</div>
-                    <button className={styles.button}><img src={addIcon}></img></button>
+                    {taglist.length > 0 ? `${taglist.map((value, index) => {
+                        return  <div key={index} >{value.tag}</div>
+                    })}`: <div className={styles.blurtext}>태그설정</div>}
+                    <button onClick={() => {setShowModal(true)}} className={styles.button}><img src={addIcon} alt="추가버튼"></img></button>
                 </div>
                 {/* 메모 & 평가 */}
-                <div>
-                    <div></div>
-                    <div></div>
+                <div className={styles.memo_container}>
+                        <div>메모</div>
+                        <textarea className={styles.memo}></textarea>
+                </div>
+                <div className={styles.container}>
+                    <img src={likeIcon} alt="좋음아이콘"></img>
+                    <img src={dislikeIcon} alt="나쁨아이콘"></img>
                 </div>
                 <div>
                     <button className={styles.button} onClick={() => addTask()}>추가</button>
                 </div>
+            {showModal && 
+                <div className={styles.tag_modal_container}>
+                    <div className={styles.tag_modal_layout}>
+                        <textarea onChange={(e) => {setTag(e.target.value)}} className={styles.tag_input}></textarea>
+                        <button onClick={() => {addTag()}} className={`${styles.button} ${styles.tag_button}`}>확인</button>
+                    </div>
+                </div>
+            }
             </div>
         </div>
     )
