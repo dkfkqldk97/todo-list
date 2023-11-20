@@ -131,6 +131,10 @@
     left : 20%;
 }
 
+.tag_container {
+    width : 100%;
+}
+
 .tag_input {
     position: absolute;
     top : 10%;
@@ -148,5 +152,14 @@
     width :55px;
     height: 25px;
     justify-content: center;
+}
+
+.tag {
+    margin: 0 10px 0 10px;
+    width : fit-content;
+    border-radius: 20px;
+    border : 1px solid black;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
 }
 
