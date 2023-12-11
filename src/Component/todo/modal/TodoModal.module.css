@@ -123,12 +123,14 @@
 }
 
 .tag_modal_layout {
-    width: 60%;
+    width: 50%;
     height: 100px;
     background-color: white;
     position: absolute;
     top : 40%;
     left : 20%;
+    padding : 20px;
+    border-radius: 20px;
 }
 
 .tag_container {
@@ -136,11 +138,11 @@
 }
 
 .tag_input {
-    position: absolute;
-    top : 10%;
     resize: none;
     border : none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin : 10px 0 0 0;
+    width: 80%;
 }
 
 .tag_button {
