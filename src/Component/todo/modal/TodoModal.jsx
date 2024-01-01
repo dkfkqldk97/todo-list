@@ -35,8 +35,7 @@ const TodoModal = (props) => {
     const [task, setTask] = useState(
         {
             title : ""
-            , startdate : ""
-            , enddate : ""
+            , date : calander
             , bookmark : bookmark
             , taglist : taglist
         }
@@ -129,12 +128,12 @@ const TodoModal = (props) => {
                         <div>메모</div>
                         <textarea className={styles.memo}></textarea>
                 </div>
-                <div className={styles.container}>
+                {/* <div className={styles.container}>
                     <img src={likeIcon} alt="좋음아이콘"></img>
                     <img src={dislikeIcon} alt="나쁨아이콘"></img>
-                </div>
-                <div className={styles.container}>
-                    <button className={styles.button} onClick={() => addTask()}>추가</button>
+                </div> */}
+                <div className={styles.modal_footer}>
+                    <button className={styles.add_button} onClick={() => addTask()}>추가</button>
                 </div>
             {showModal && 
                 <div onKeyDown={(e) => {if(e.code === "Enter") addTag()}} className={styles.tag_modal_container}>

@@ -20,8 +20,10 @@ const Today = () => {
             modal.remove();
         }
 
-        if(task.title !== undefined && task.title!=="" && !status) {
-            setTasklist([...tasklist, task]);
+        if(!status) {
+            if(task.title !== undefined && task.title!=="") {
+                setTasklist([...tasklist, task]);
+            }
         }
 
         setShowModal(status);
