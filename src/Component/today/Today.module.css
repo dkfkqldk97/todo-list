@@ -29,22 +29,57 @@
 .button_add {
     background: none;
     border: none;
+    margin : 10px 0px;
 }
 
 .button_add:hover {
     cursor: pointer;
 }
 
+.textarea_layout {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .textarea {
-    width: 40%;
-    height: 100%;
     resize: none;
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    position: relative;
-    right: 10px;
+    width: 200px;
+    height: 20px;
+    margin-right : 10px;
 }
 
 .textarea::placeholder {
     text-indent: 10%;
+}
+
+.task_container {
+    width : 100%;
+    height : 670px;
+    overflow-y: scroll;
+}
+
+.task_layout {
+    display: flex;
+    margin : 10px 0 10px 10px;
+    border-radius: 10px;
+    background-color: #0000000d;
+    width : fit-content;
+    padding: 5px 8px;
+}
+
+.task {
+    font-size : 15px;
+    margin : 10px;
+}
+
+.icon {
+    margin : 0 8px 0 8px;
+
+}
+
+.icon:hover {
+    cursor: pointer;
 }
